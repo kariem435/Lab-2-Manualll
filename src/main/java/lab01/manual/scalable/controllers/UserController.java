@@ -39,6 +39,16 @@ public class UserController {
         return userService.getUserById(id);
     }
 
+    @GetMapping("/me")
+    public User getCurrentUser() {
+        return new User(
+                "1",
+                "Dummy User",
+                20,
+                "dummy@test.com"
+        );
+    }
+
     @PostMapping
     public User createUser(@RequestBody User user) {
         return userService.createUser(user);
